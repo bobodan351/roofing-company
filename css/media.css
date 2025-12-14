@@ -648,7 +648,7 @@
     flex-direction: column;
   }
   .slidehow img{
-    height: 600px;
+    height: 200px;
   }
 }
 @media (max-width: 400px) {
