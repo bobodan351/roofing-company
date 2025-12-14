@@ -647,8 +647,11 @@
   .sub-hero {
     flex-direction: column;
   }
-  .slidehow img{
-    height: 200px;
+  .slideshow img{
+    height: 400px;
+  }
+  .overlay{
+    top: 30%;
   }
 }
 @media (max-width: 400px) {
