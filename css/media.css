@@ -689,4 +689,7 @@
   .roofer-img {
     width: 320px;
   }
+  .slidehow img{
+    height: 50vh;
+  }
 }
