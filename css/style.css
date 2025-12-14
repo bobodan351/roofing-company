@@ -206,8 +206,8 @@ body {
     opacity: 0;
   }
 }
-.overlay h1 {
-  font-size: clamp(2rem, 5vw, 4rem); /* responsive */
+.mobile-view {
+  font-size: 2rem; /* responsive */
   margin-bottom: 10px;
   font-weight: bold;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
@@ -233,6 +233,12 @@ body {
   transform: translateY(-30%);
   color: white;
   max-width: 80%;
+}
+.read-more-div {
+  display: none;
+}
+.free-quote {
+  display: none;
 }
 .span-sub-text {
   color: #696969;

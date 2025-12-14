@@ -424,9 +424,9 @@
     padding: 40px 20px;
   }
   .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 @media (max-width: 720px) {
   .slideshow {
@@ -630,9 +630,6 @@
   .second-part {
     gap: 4px;
   }
-  .mobile-view {
-    font-size: 10px;
-  }
   .call-text {
     font-weight: 100;
     font-size: 13px;
@@ -678,18 +675,53 @@
   .roofer-img {
     width: 350px;
   }
+
 }
 @media (max-width: 350px) {
-  .prof {
-    right: 15%;
-  }
   .contact-first-section-div {
     margin: 10px;
   }
   .roofer-img {
     width: 320px;
   }
-  .slideshow img{
-    height: 50vh;
+  .slideshow img {
+    height: 500px;
   }
+  .sub-text {
+    display: none;
+  }
+  .mobile-view {
+    font-size: 1.2rem;
+  }
+  .overlay{
+    left: 0;
+  top: 60%;
+  }
+  .prof{
+    right: -20%;
+  }
+  .read-more-div a {
+  text-decoration: none;
+  color: white;
+}
+.read-more-div {
+  background-color: rgb(215, 92, 49);
+  border: none;
+  padding: 10px;
+  margin-right: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+.free-quote {
+  box-shadow: 5px 5px 5px grey;
+  border: none;
+  padding: 10px;
+  display: block;
+  margin-right: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 }
