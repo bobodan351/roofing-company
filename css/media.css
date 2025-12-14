@@ -647,6 +647,9 @@
   .sub-hero {
     flex-direction: column;
   }
+  .slidehow img{
+    height: 600px;
+  }
 }
 @media (max-width: 400px) {
   .free-quote-form {
