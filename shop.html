@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Typing Animation</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: #0f0f1e;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .typing-container {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .typing-text {
+      color: #00ff99;
+    }
+
+    .cursor {
+      display: inline-block;
+      background-color: #fff;
+      margin-left: 4px;
+      animation: blink 1s infinite;
+
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="typing-container">
+    <span class="typing-text" id="typing"></span>
+    <span class="cursor">|</span>
+  </div>
+
+  <script>
+    const textElement = document.getElementById('typing');
+    const sentences = [
+      "We build amazing things",
+      "We solve real problems",
+      "We are hiring talents",
+      "Join our team now!"
+    ];
+
+    let sentenceIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let currentText = '';
+
+    function type() {
+      const currentText = sentences[sentenceIndex];
+
+      if (isDeleting) {
+        textElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        textElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      // Speed control
+      let typeSpeed = 100;
+
+      if (isDeleting) {
+        typeSpeed = 50; // delete faster
+      }
+
+      if (!isDeleting && charIndex === currentText.length) {
+        typeSpeed = 1500; // pause at end
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        sentenceIndex = (sentenceIndex + 1) % sentences.length; // next sentence
+        typeSpeed = 500; // pause before typing next
+      }
+
+      setTimeout(type, typeSpeed);
+    }
+
+    // Start the animation
+    type();
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book an Appointment – Chhapru</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background:#f8f9fa; padding:40px 20px; }
+
+    .appointment-section {
+      max-width: 900px;
+      margin:  0 auto;
+      background: #fff;
+      padding: 50px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input, select, textarea {
+      padding: 14px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #fff;
+      transition: border-color .3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #d35400;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background: #d35400;
+      color: #fff;
+      border: none;
+      padding: 16px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #e67e22;
+    }
+
+    /* Make it single column on mobile */
+    @media (max-width: 768px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .appointment-section { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="appointment-section">
+    <form id="appointment-form">
+      <div class="form-grid">
+        <!-- Row 1 -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+
+        <!-- Row 2 -->
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="+234 ..." required />
+        </div>
+
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <!-- Row 3 -->
+        <div class="form-group">
+          <label for="time">Preferred Time</label>
+          <select id="time" name="time" required>
+            <option value="" disabled selected>Choose time</option>
+            <option>09:00 AM</option>
+            <option>09:30 AM</option>
+            <option>10:00 AM</option>
+            <option>10:30 AM</option>
+            <option>11:00 AM</option>
+            <option>11:30 AM</option>
+            <option>12:00 PM</option>
+            <option>12:30 PM</option>
+            <option>01:00 PM</option>
+            <option>01:30 PM</option>
+            <option>02:00 PM</option>
+            <option>02:30 PM</option>
+            <option>03:00 PM</option>
+            <option>03:30 PM</option>
+            <option>04:00 PM</option>
+            <option>04:30 PM</option>
+            <option>05:00 PM</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Choose service</option>
+            <option>Roof Replacement</option>
+            <option>Roof Maintenance</option>
+            <option>Roof Inspections</option>
+            <option>Roof Leak Maintenance</option>
+            <option>Green Roof Installation</option>
+          </select>
+        </div>
+
+        <!-- Message -->
+        <div class="form-group full">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" placeholder="Tell us a bit about your project..."></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        Send Message
+      </button>
+    </form>
+  </section>
+
+  <!-- Optional: EmailJS Integration (uncomment if you want) -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // emailjs.init('YOUR_PUBLIC_KEY');
+
+    // document.getElementById('appointment-form').addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+    //     .then(() => alert('Appointment request sent!'))
+    //     .catch(err => alert('Error: ' + err.text));
+    // });
+  </script>
+</body>
+</html>

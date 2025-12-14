@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Expanding Navbar</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+  <body>
+    <section class="hero">
+      <!-- Slideshow -->
+      <div class="slideshow">
+        <img src="images/slider-v3.jpg" alt="" class="slider"/>
+        <img src="images/slider-v2.jpg" alt="" class="slider" />
+        <img src="images/slider-v1.jpg" alt="" class="slider" />
+        <div class="overlay">
+          <div class="sub-text">
+            Welcome to Roofer <span class="span-sub-text">Repair Wordpress</span
+            ><span class="empty"></span>
+          </div>
+          <h1 class="mobile-view">
+            We are <span class="prof">Professional </span
+            ><span class="roof">Roofers</span>
+          </h1>
+        </div>
+      </div>
+
+      <div class="pre-header">
+        <div class="first-part">
+          <img
+            src="images/call-receive-svgrepo-com.svg"
+            alt=""
+            height="25px"
+            width="25px"
+          />
+          <p class="call-text">Call us +123456789</p>
+        </div>
+        <div class="second-part">
+          <img src="images/facebook-svgrepo-com.svg" alt="" />
+          <img src="images/gplus-svgrepo-com.svg" alt="" />
+          <img src="images/instagram-svgrepo-com.svg" alt="" />
+          <img src="images/twitter-svgrepo-com.svg" alt="" />
+          <img src="images/linkedin-boerder-svgrepo-com.svg" alt="" />
+        </div>
+      </div>
+      <header id="navbar">
+        <div class="logo"><img src="images/chappru logo.png" alt="" /></div>
+        <nav id="nav-menu">
+          <ul>
+            <li>
+              <a href="index.html" class="menu">Home </a>
+            </li>
+            <li>
+              <a href="services.html" class="menu">Services</a>
+            </li>
+            <li>
+              <a href="#" class="menu"
+                >Pages<img
+                  src="images/dropdown-arrow-svgrepo-com.svg"
+                  alt=""
+                  class="drop-menu"
+              /></a>
+              <div class="dropdown-content Pages">
+                <a href="about.html" class="drp-dwn-link">About Us</a>
+                <a href="book-an-appointment.html" class="drp-dwn-link">Book An Appointment</a>
+                <a href="#" class="drp-dwn-link">Location </a>
+                <a href="#" class="drp-dwn-link">Gallery</a>
+                <a href="#" class="drp-dwn-link">Team Variation</a>
+                <a href="#" class="drp-dwn-link">Team Details</a>
+                <a href="#" class="drp-dwn-link">Testimonials</a>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="menu">Blog </a>
+            </li>
+
+            <li>
+              <a href="contact.html" class="menu">Contact Us </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <header class="mobile-header">
+        <div class="mobile-header__logo">
+          <img src="images/chappru logo.png" alt="" />
+        </div>
+        <div class="mobile-header__hamburger" onclick="toggleMenu()">☰</div>
+        <nav id="menu" class="mobile-nav">
+          <ul class="mobile-nav__list">
+            <!-- Home -->
+            <li class="mobile-nav__item">
+              <a
+                class="mobile-nav__link"
+                onclick="toggleDropdown(this)"
+                href="index.html"
+              >
+                Home
+              </a>
+            </li>
+
+            <!-- Services -->
+            <li class="mobile-nav__item">
+              <a
+                class="mobile-nav__link"
+                onclick="toggleDropdown(this)"
+                href="services.html"
+              >
+                Services
+              </a>
+            </li>
+
+            <!-- Pages -->
+            <li class="mobile-nav__item">
+              <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+                Pages
+                <img
+                  src="images/dropdown-arrow-svgrepo-com.svg"
+                  alt=""
+                  class="drop-menu-icon"
+                />
+              </a>
+              <div class="mobile-dropdown">
+                <a href="about.html" class="mobile-dropdown__link">About Us</a>
+                <a href="book-an-appointment.html" class="mobile-dropdown__link">Book an Appointment</a>
+                <a href="#" class="mobile-dropdown__link">Location</a>
+                <a href="#" class="mobile-dropdown__link">Gallery</a>
+                <a href="#" class="mobile-dropdown__link">Team Variations</a>
+                <a href="#" class="mobile-dropdown__link">Team Details</a>
+                <a href="#" class="mobile-dropdown__link">Testimonials</a>
+              </div>
+            </li>
+
+            <!-- Blog -->
+            <li class="mobile-nav__item">
+              <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+                Blog
+              </a>
+            </li>
+
+            <!-- Shop -->
+
+            <!-- Contact -->
+            <li class="mobile-nav__item">
+              <a
+                class="mobile-nav__link"
+                onclick="toggleDropdown(this)"
+                href="contact.html"
+              >
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </section>
+    <section class="features">
+      <div class="feature">
+        <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+        <div class="feature-text">Expert and Professional</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+        <div class="feature-text">10+ Years Experience</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><i class="far fa-clock"></i></div>
+        <div class="feature-text">24 / 7 Opened Services</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><i class="fas fa-sack-dollar"></i></div>
+        <div class="feature-text">Free Cost Inspection</div>
+      </div>
+    </section>
+    <span class="border"></span>
+    <section class="designs">
+      <div class="welcome"><span class="WELCOME">WELCOME</span> TO ROOFER</div>
+      <span class="empty-two"></span>
+      <p class="design-text-one">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga esse
+        commodi ex? Ullam.
+      </p>
+      <p class="design-text-two">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur,
+        quaerat.
+      </p>
+      <!-- ✅ HTML -->
+      <div class="roofer-segment">
+        <!-- Left section -->
+        <div class="first-segment">
+          <i class="fas fa-trophy icon" id="font-icon"></i>
+          <h3 id="roofing-head">Roof Leak Repair and Installation</h3>
+          <span class="line"></span>
+          <p id="roofing-text">
+            Lay a row of starter shingles down both sides of the roof as well
+            and secure those in place using roofing nails...
+          </p>
+        </div>
+
+        <!-- Middle section (Image) -->
+        <div class="second-segment">
+          <img src="images/chapru roof.jpg" alt="Roof illustration" />
+        </div>
+
+        <!-- Right section (Buttons) -->
+        <div class="third-segment">
+          <button class="rooting-button" onclick="myFunction(0)">
+            ROOF COATING
+          </button>
+          <button class="rooting-button" onclick="myFunction(1)">
+            ROOF SHADING
+          </button>
+          <button class="rooting-button" onclick="myFunction(2)">
+            ROOF REPAIRING
+          </button>
+          <button class="rooting-button" onclick="myFunction(3)">
+            ROOF LEAK REPAIR
+          </button>
+          <button class="rooting-button" onclick="myFunction(4)">
+            EMERGENCY REPAIR
+          </button>
+          <button class="rooting-button" onclick="myFunction(5)">
+            ROOF MANAGEMENT
+          </button>
+          <button class="rooting-button" onclick="myFunction(6)">
+            ROOF REPLACEMENT
+          </button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="welcome"><span class="late">LATEST </span> PROJECT</div>
+      <span class="empty-two"></span>
+      <div class="grid-container">
+        <div class="img-div">
+          <img src="/images/project-1.jpg" alt="" class="project-img" />
+        </div>
+        <div class="img-div">
+          <img src="/images/project-2.jpg" alt="" class="project-img" />
+        </div>
+        <div class="img-div">
+          <img src="images/project-3.jpg" alt="" class="project-img" />
+        </div>
+        <div class="img-div">
+          <img src="/images/project-4.jpg" alt="" class="project-img" />
+        </div>
+        <div class="img-div">
+          <img src="/images/project-5.jpg" alt="" class="project-img" />
+        </div>
+        <div class="img-div">
+          <img src="/images/project-7.jpg" alt="" class="project-img" />
+        </div>
+        <div class="img-div">
+          <img src="/images/project-8.jpg" alt="" class="project-img" />
+        </div>
+        <div class="img-div">
+          <img src="/images/project-9.jpg" alt="" class="project-img" />
+        </div>
+        <div class="img-div">
+          <img
+            src="/images/project-6.jpg"
+            alt=""
+            class="project-img deattach"
+          />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="welcome">
+        <span class="WELCOME"> MEET OUR </span>
+        EXPERTS
+      </div>
+      <span class="empty-two"></span>
+      <div class="managers-container">
+        <div class="managers" onclick="managerAbout(0)">
+          <img src="images/team-1-1.jpg" alt="" />
+        </div>
+        <div class="managers" onclick="managerAbout(1)">
+          <img src="images/team-2.jpg" alt="" />
+        </div>
+        <div class="managers" onclick="managerAbout(2)">
+          <img src="images/team-3.jpg" alt="" />
+        </div>
+        <div class="managers" onclick="managerAbout(3)">
+          <img src="images/team-4.jpg" alt="" />
+        </div>
+      </div>
+      <div class="managers-info">
+        <div class="managers-names">
+          <p id="team-manager">Team Manager</p>
+          <h1 id="name">John Deo</h1>
+        </div>
+        <div class="managers-about">
+          <p id="about-name">About John Deo</p>
+          <p id="about-text">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here, content
+            here'.
+          </p>
+        </div>
+      </div>
+    </section>
+    <span class="border"></span>
+    <section>
+      <div class="logo-container">
+        <div class="logo-div"><img src="images/logo-1.png" alt="" /></div>
+        <div class="logo-div"><img src="images/logo-2.png" alt="" /></div>
+        <div class="logo-div"><img src="images/logo-3.png" alt="" /></div>
+        <div class="logo-div"><img src="images/logo-4.png" alt="" /></div>
+      </div>
+    </section>
+    <section class="testimonial-section">
+      <div class="welcome"><span class="late">WHAT OUR</span> CLIENT SAYS</div>
+      <span class="empty-two"></span>
+      <p class="section-subtitle">
+        Suspendisse laoreet tempus auctor. Sed sed neque nibh. Ut quis arcu quis
+        quam vehicula convallis sed non tellus. Lorem ipsum dolor sit amet.
+      </p>
+
+      <div class="testimonial-container">
+        <img src="images/client-1.jpg" alt="Client" class="client-photo" />
+
+        <p class="quote">
+          Pellentesque mattis pharetra blandit in metus at nibh posuere mattis
+          non et ex. Nulla facilisi. Duis congue sodales tortor utrum congue sem
+          rhé quis. Integer porta viverra exvol. Duis eget rutrum ligula.
+          Phasellus pretium porta feugiat sem id sagittis.
+        </p>
+
+        <div class="client-info">
+          <p class="client-name">Hitesh Mahavar</p>
+          <p class="client-job">Wp Organic</p>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="nav-arrow prev-arrow" onclick="changeTestimonial(-1)">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="nav-arrow next-arrow" onclick="changeTestimonial(1)">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="welcome"><span class="WELCOME">LATEST</span> FROM BLOG</div>
+      <span class="empty-two"></span>
+      <p class="design-text-one">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga esse
+        commodi ex? Ullam.
+      </p>
+      <p class="design-text-two">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur,
+        quaerat.
+      </p>
+      <section class="blog-section">
+        <div class="blog-grid">
+          <!-- Blog Card 1 -->
+          <article class="blog-card">
+            <div class="blog-image">
+              <img src="images/blog-5-370x270.jpg" alt="Roof repair" />
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span
+                  ><i class="far fa-calendar-alt"></i> February 11, 2022</span
+                >
+                <span><i class="fas fa-user-tie"></i> Admin</span>
+              </div>
+              <h3 class="blog-title">
+                Easy Way to Roof Replacement and Repair by Step Guide
+              </h3>
+              <p class="blog-excerpt">
+                Nam ipsum nisi, condimentum ac aliquam in, porttitor efficitur
+                erat. Integer posuere tempus dui a congue. Fusce...
+              </p>
+              <div class="blog-footer">
+                <a href="#" class="read-more"
+                  >READ MORE <i class="fas fa-arrow-right"></i
+                ></a>
+                <div class="blog-stats">
+                  <i class="far fa-comment"></i>
+                  <div class="blog-stat">0</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 2 -->
+          <article class="blog-card">
+            <div class="blog-image">
+              <img src="images/blog-4-370x270.jpg" alt="Roof replacement" />
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> March 17, 2022</span>
+                <span><i class="fas fa-user-tie"></i> Admin</span>
+              </div>
+              <h3 class="blog-title">
+                Roof Replacement and Repair Easy Steps by Step Guide
+              </h3>
+              <p class="blog-excerpt">
+                Nam ipsum nisi, condimentum ac aliquam in, porttitor efficitur
+                erat. Integer posuere tempus dui a congue. Fusce...
+              </p>
+              <div class="blog-footer">
+                <a href="#" class="read-more"
+                  >READ MORE <i class="fas fa-arrow-right"></i
+                ></a>
+                <div class="blog-stats">
+                  <i class="far fa-comment"></i>
+                  <div class="blog-stat">0</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 3 -->
+          <article class="blog-card">
+            <div class="blog-image">
+              <img src="/images/blog-3-370x270.jpg" alt="Worker on roof" />
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> April 11, 2022</span>
+                <span><i class="fas fa-user-tie"></i> Admin</span>
+              </div>
+              <h3 class="blog-title">
+                Replacement and Repair Easy Steps by Step Guide
+              </h3>
+              <p class="blog-excerpt">
+                Nam ipsum nisi, condimentum ac aliquam in, porttitor efficitur
+                erat. Integer posuere tempus dui a congue. Fusce...
+              </p>
+              <div class="blog-footer">
+                <a href="#" class="read-more"
+                  >READ MORE <i class="fas fa-arrow-right"></i
+                ></a>
+                <div class="blog-stats" title="Click here to comment">
+                  <i class="far fa-comment"></i>
+                  <div class="blog-stat">0</div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="welcome"><span class="late">GET FREE</span> ESTIMATION</div>
+        <span class="empty-two"></span>
+        <p class="subtitle">
+          Suspendisse laoreet tempus auctor. Sed sed neque nibh. Ut quisque
+          vehicula convallis sed non tellus. Lorem ipsum sit amet.
+        </p>
+
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              required
+              class="input-text"
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              class="input-text"
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="address"
+              placeholder="Address"
+              required
+              class="input-text"
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              required
+              class="input-text"
+            />
+          </div>
+
+          <div class="form-group full">
+            <textarea
+              name="message"
+              placeholder="Message"
+              required
+              class="input-text"
+            ></textarea>
+          </div>
+
+          <div class="form-message" id="form-message"></div>
+
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Submit
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- <i class="fas fa-hard-hat"></i>  
+<i class="fas fa-user-tie"></i>  
+<i class="fas fa-user-cog"></i>  
+<i class="fas fa-user-check"></i> -->
+    <div class="comment-modal" id="comment-modal">
+      <form method="POST">
+        <span class="close" id="close">&times;</span>
+
+        <input
+          type="text"
+          placeholder="Your Name"
+          id="comment-name"
+          required
+          name="comment-name"
+        />
+
+        <input
+          type="text"
+          placeholder="Comment"
+          id="user-comment"
+          name="comments"
+          required
+        />
+        <button type="submit" id="comment-submit">Submit</button>
+      </form>
+    </div>
+    <footer>
+      <div class="footer-container">
+        <!-- Column 1: Logo + Description + Social -->
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="images/logo-white.png" alt="Chhapru" />
+          </div>
+          <p class="footer-text">
+            Donec pulvinar suscipit sapien nec blandit. Curabitur nunc eros,
+            semper nisl aliquam rutrum neque. Mauris eleifend Donec pulvinar
+            suscipit sapien nec blandit. Curabitur nunc eros, semper nisl
+            aliquam rutrum neque.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Contact Info -->
+        <div class="footer-col">
+          <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              121 King Street, Melbourne Victoria<br />
+              3000 Australia
+            </div>
+          </div>
+
+          <h3 style="margin-top: 30px"><i class="fas fa-phone"></i> Call Us</h3>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              Phone: +61 3 8376 6284<br />
+              Fax: +61 3 8376 6284
+            </div>
+          </div>
+
+          <h3 style="margin-top: 30px">
+            <i class="fas fa-envelope"></i> Mail Us
+          </h3>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              info: HR.love@chhapru.com<br />
+              job@chhapru.com
+            </div>
+          </div>
+
+          <h3 style="margin-top: 30px">
+            <i class="fas fa-building"></i> Office
+          </h3>
+          <div class="contact-item">
+            <i class="fas fa-building"></i>
+            <div>Head Corporate Australia India</div>
+          </div>
+        </div>
+
+        <!-- Column 3: Working Hours -->
+        <div class="footer-col">
+          <h3>Working Hours</h3>
+          <div class="working-hours">
+            <span>Monday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Tuesday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Wednesday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Thursday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Friday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Saturday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Sunday</span> <strong class="closed">Closed</strong>
+          </div>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email" required />
+            <textarea placeholder="Message" rows="3"></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-links">
+          <a href="pages.html">Pages</a>
+          <a href="services.html">Services</a>
+          <a href="shop.html">Shop</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <a class="back-to-top" id="backToTop">
+          <i class="fas fa-arrow-up"></i> Back to top
+        </a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/index.js"></script>
+    <script src="script/contact.js"></script>
+  </body>
+</html>

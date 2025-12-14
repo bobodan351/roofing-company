@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <style>
+      .dropdown {
+        display: none;
+        flex-direction: row;
+        background: rgb(215, 92, 49);
+        transition: all 1s ease-in-out;
+      }
+      .dropdown.active {
+        transition: all 10s ease;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown-container">
+      <div onclick="toggleDropdown(this)">drp-dw-onen</div>
+      <div class="dropdown">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. luam eu porta
+          lacus, a vestibulum tortor. Etiam finibus id nisi vitaoe luctus. Sed
+          efficitur, ipsum at semper ultrices, turpis mi conue libero, in
+          suscipit arcu augue at arcu
+        </p>
+      </div>
+    </div>
+    <div class="dropdown-container">
+      <div onclick="toggleDropdown(this)">
+        drp-dw-onen <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="dropdown">
+        <a href="about.html" class="mobile-dropdown__link">About Us</a>
+        <a href="#" class="mobile-dropdown__link">Book an Appointment</a>
+        <a href="#" class="mobile-dropdown__link">Location</a>
+        <a href="#" class="mobile-dropdown__link">Gallery</a>
+        <a href="#" class="mobile-dropdown__link">Team Variations</a>
+        <a href="#" class="mobile-dropdown__link">Team Details</a>
+        <a href="#" class="mobile-dropdown__link">Testimonials</a>
+      </div>
+    </div>
+    <div class="dropdown-container">
+      <div onclick="toggleDropdown(this)">drp-dw-onen</div>
+      <div class="dropdown">
+        <a href="about.html" class="mobile-dropdown__link">About Us</a>
+        <a href="#" class="mobile-dropdown__link">Book an Appointment</a>
+        <a href="#" class="mobile-dropdown__link">Location</a>
+        <a href="#" class="mobile-dropdown__link">Gallery</a>
+        <a href="#" class="mobile-dropdown__link">Team Variations</a>
+        <a href="#" class="mobile-dropdown__link">Team Details</a>
+        <a href="#" class="mobile-dropdown__link">Testimonials</a>
+      </div>
+    </div>
+    <div class="dropdown-container">
+      <div onclick="toggleDropdown(this)">drp-dw-onen</div>
+      <div class="dropdown">
+        <a href="about.html" class="mobile-dropdown__link">About Us</a>
+        <a href="#" class="mobile-dropdown__link">Book an Appointment</a>
+        <a href="#" class="mobile-dropdown__link">Location</a>
+        <a href="#" class="mobile-dropdown__link">Gallery</a>
+        <a href="#" class="mobile-dropdown__link">Team Variations</a>
+        <a href="#" class="mobile-dropdown__link">Team Details</a>
+        <a href="#" class="mobile-dropdown__link">Testimonials</a>
+      </div>
+    </div>
+    <script>
+      function toggleDropdown(element) {
+        const dropdown = element.nextElementSibling;
+        dropdown.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

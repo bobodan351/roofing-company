@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+  <body>
+    <header class="mobile-header">
+      <div class="mobile-header__logo">
+        <img src="images/chappru logo.png" alt="" />
+      </div>
+      <div class="mobile-header__hamburger" onclick="toggleMenu()">☰</div>
+
+      <nav id="menu" class="mobile-nav">
+        <ul class="mobile-nav__list">
+          <!-- Home -->
+          <li class="mobile-nav__item">
+            <a
+              class="mobile-nav__link"
+              onclick="toggleDropdown(this)"
+              href="index.html"
+            >
+              Home
+            </a>
+          </li>
+
+          <!-- Services -->
+          <li class="mobile-nav__item">
+            <a
+              class="mobile-nav__link"
+              onclick="toggleDropdown(this)"
+              href="services.html"
+            >
+              Services
+            </a>
+          </li>
+
+          <!-- Pages -->
+          <li class="mobile-nav__item">
+            <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+              Pages
+              <img
+                src="images/dropdown-arrow-svgrepo-com.svg"
+                alt=""
+                class="drop-menu-icon"
+              />
+            </a>
+            <div class="mobile-dropdown">
+              <a href="about.html" class="mobile-dropdown__link">About Us</a>
+
+              <a href="book-an-appointment.html" class="mobile-dropdown__link">Book an Appointment</a>
+
+              <a href="#" class="mobile-dropdown__link">Location</a>
+              <a href="#" class="mobile-dropdown__link">Gallery</a>
+              <a href="#" class="mobile-dropdown__link">Team Variations</a>
+              <a href="#" class="mobile-dropdown__link">Team Details</a>
+              <a href="#" class="mobile-dropdown__link">Testimonials</a>
+            </div>
+          </li>
+
+          <!-- Blog -->
+          <li class="mobile-nav__item">
+            <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+              Blog
+            </a>
+          </li>
+
+          <!-- Shop -->
+
+          <!-- Contact -->
+          <li class="mobile-nav__item">
+            <a
+              class="mobile-nav__link"
+              onclick="toggleDropdown(this)"
+              href="contact.html"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <!-- Slideshow -->
+
+      <div class="services-bgc">
+        <div class="services-bgc-frame"></div>
+        <p class="header-text">Services</p>
+        <a href="index.html" class="sub-header-text"
+          >ROOFING REPAIR <i class="fas fa-chevron-right"></i>
+          <span class="WELCOME">SERVICES</span></a
+        >
+      </div>
+      <!-- <div class="pre-header">
+        <div class="first-part">
+          <img
+            src="images/call-receive-svgrepo-com.svg"
+            alt=""
+            height="25px"
+            width="25px"
+          />
+          <p class="call-text">Call us +123456789</p>
+        </div>
+        <div class="second-part">
+          <img src="images/facebook-svgrepo-com.svg" alt="" />
+          <img src="images/gplus-svgrepo-com.svg" alt="" />
+          <img src="images/instagram-svgrepo-com.svg" alt="" />
+          <img src="images/twitter-svgrepo-com.svg" alt="" />
+          <img src="images/linkedin-boerder-svgrepo-com.svg" alt="" />
+        </div>
+      </div> -->
+      <header id="navbar">
+        <div class="logo"><img src="images/chappru logo.png" alt="" /></div>
+        <nav id="nav-menu">
+          <ul>
+            <li>
+              <a href="index.html" class="menu">Home </a>
+            </li>
+            <li>
+              <a href="#" class="menu">Services</a>
+            </li>
+            <li>
+              <a href="#" class="menu"
+                >Pages<img
+                  src="images/dropdown-arrow-svgrepo-com.svg"
+                  alt=""
+                  class="drop-menu"
+              /></a>
+              <div class="dropdown-content Pages">
+                <a href="about.html" class="drp-dwn-link">About Us</a>
+                <a href="book-an-appointment.html" class="drp-dwn-link">Book An Appointment</a>
+                <a href="#" class="drp-dwn-link">Location </a>
+                <a href="#" class="drp-dwn-link">Gallery</a>
+                <a href="#" class="drp-dwn-link">Team Variation</a>
+                <a href="#" class="drp-dwn-link">Team Details</a>
+                <a href="#" class="drp-dwn-link">Testimonials</a>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="menu">Blog </a>
+            </li>
+
+            <li>
+              <a href="#" class="menu">Contact Us </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div></div>
+    </section>
+    <section class="services-section">
+      <div class="welcome">OUR <span class="late">SERVICES</span></div>
+      <span class="empty-two"></span>
+      <p class="design-text-one">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga esse
+        commodi ex? Ullam.
+      </p>
+      <p class="design-text-two">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur,
+        quaerat.
+      </p>
+      <div class="services-grid-container">
+        <div class="services-grid one">
+          <img
+            src="/images/roofing replacement.png"
+            alt="loading........"
+            title="Bro comot mouse for my body nah"
+          />
+          <a href="servicesdetail.html" style="text-decoration: none">
+            <p class="services-grid-inner-header-text">Roof Replacement</p></a
+          >
+          <span class="services-red-bar"></span>
+          <p class="services-grid-inner-sub-text">
+            Lay a row of starter shingles down both sides of the roof as well
+            and secure those in place using roofing nails...
+          </p>
+        </div>
+        <div class="services-grid two">
+          <img
+            src="/images/roof spec.png"
+            alt="loading........"
+            title="Bro comot mouse for my body nah"
+          />
+          <a href="servicesdetail.html" style="text-decoration: none">
+            <p class="services-grid-inner-header-text">Roofing Specialist</p></a
+          >
+          <span class="services-red-bar"></span>
+          <p class="services-grid-inner-sub-text">
+            Lay a row of starter shingles down both sides of the roof as well
+            and secure those in place using roofing nails...
+          </p>
+        </div>
+        <div class="services-grid three">
+          <img
+            src="/images/here for you.png"
+            alt="loading........"
+            title="Bro comot mouse for my body nah"
+          />
+          <a href="servicesdetail.html" style="text-decoration: none">
+            <p class="services-grid-inner-header-text">Emergency Response</p></a
+          >
+          <span class="services-red-bar"></span>
+          <p class="services-grid-inner-sub-text">
+            Lay a row of starter shingles down both sides of the roof as well
+            and secure those in place using roofing nails...
+          </p>
+        </div>
+        <div class="services-grid four">
+          <img
+            src="/images/free inspec.png"
+            alt="loading........"
+            title="Bro comot mouse for my body nah"
+          />
+          <a
+            href="http://127.0.0.1:5500/index.html#contact"
+            style="text-decoration: none"
+          >
+            <p class="services-grid-inner-header-text">Free Inspection</p></a
+          >
+          <span class="services-red-bar"></span>
+          <p class="services-grid-inner-sub-text">
+            Lay a row of starter shingles down both sides of the roof as well
+            and secure those in place using roofing nails...
+          </p>
+        </div>
+        <div class="services-grid five">
+          <img
+            src="/images/green roof.png"
+            alt="loading........"
+            title="Bro comot mouse for my body nah"
+          />
+          <a href="servicesdetail.html" style="text-decoration: none">
+            <p class="services-grid-inner-header-text">
+              Green Roof Installation
+            </p></a
+          >
+          <span class="services-red-bar"></span>
+          <p class="services-grid-inner-sub-text">
+            Lay a row of starter shingles down both sides of the roof as well
+            and secure those in place using roofing nails...
+          </p>
+        </div>
+        <div class="services-grid six">
+          <img
+            src="/images/roof maintenance .png"
+            alt="loading........"
+            title="Bro comot mouse for my body nah"
+          />
+          <a href="servicesdetail.html" style="text-decoration: none">
+            <p class="services-grid-inner-header-text">Roof Maintenance</p></a
+          >
+          <span class="services-red-bar"></span>
+          <p class="services-grid-inner-sub-text">
+            Lay a row of starter shingles down both sides of the roof as well
+            and secure those in place using roofing nails...
+          </p>
+        </div>
+        <div class="services-grid seven">
+          <img
+            src="/images/roof inspection.png"
+            alt="loading........"
+            title="Bro comot mouse for my body nah"
+          />
+          <a href="servicesdetail.html" style="text-decoration: none">
+            <p class="services-grid-inner-header-text">Roof Inspection</p></a
+          >
+          <span class="services-red-bar"></span>
+          <p class="services-grid-inner-sub-text">
+            Lay a row of starter shingles down both sides of the roof as well
+            and secure those in place using roofing nails...
+          </p>
+        </div>
+        <div class="services-grid eight">
+          <img
+            src="/images/roof leak.png"
+            alt="loading........"
+            title="Bro comot mouse for my body nah"
+          />
+          <a href="servicesdetail.html" style="text-decoration: none">
+            <p class="services-grid-inner-header-text">Roof Leak Repair</p></a
+          >
+          <span class="services-red-bar"></span>
+          <p class="services-grid-inner-sub-text">
+            Lay a row of starter shingles down both sides of the roof as well
+            and secure those in place using roofing nails...
+          </p>
+        </div>
+        <div class="services-grid nine">
+          <img
+            src="/images/emergency response.png"
+            alt="loading........"
+            title="Bro comot mouse for my body nah"
+          />
+          <a href="servicesdetail.html" style="text-decoration: none">
+            <p class="services-grid-inner-header-text">
+              24/7 Opened Services
+            </p></a
+          >
+          <span class="services-red-bar"></span>
+          <p class="services-grid-inner-sub-text">
+            Lay a row of starter shingles down both sides of the roof as well
+            and secure those in place using roofing nails...
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <!-- Column 1: Logo + Description + Social -->
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="images/logo-white.png" alt="Chhapru" />
+          </div>
+          <p class="footer-text">
+            Donec pulvinar suscipit sapien nec blandit. Curabitur nunc eros,
+            semper nisl aliquam rutrum neque. Mauris eleifend Donec pulvinar
+            suscipit sapien nec blandit. Curabitur nunc eros, semper nisl
+            aliquam rutrum neque.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Contact Info -->
+        <div class="footer-col">
+          <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              121 King Street, Melbourne Victoria<br />
+              3000 Australia
+            </div>
+          </div>
+
+          <h3 style="margin-top: 30px"><i class="fas fa-phone"></i> Call Us</h3>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              Phone: +61 3 8376 6284<br />
+              Fax: +61 3 8376 6284
+            </div>
+          </div>
+
+          <h3 style="margin-top: 30px">
+            <i class="fas fa-envelope"></i> Mail Us
+          </h3>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              info: HR.love@chhapru.com<br />
+              job@chhapru.com
+            </div>
+          </div>
+
+          <h3 style="margin-top: 30px">
+            <i class="fas fa-building"></i> Office
+          </h3>
+          <div class="contact-item">
+            <i class="fas fa-building"></i>
+            <div>Head Corporate Australia India</div>
+          </div>
+        </div>
+
+        <!-- Column 3: Working Hours -->
+        <div class="footer-col">
+          <h3>Working Hours</h3>
+          <div class="working-hours">
+            <span>Monday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Tuesday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Wednesday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Thursday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Friday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Saturday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Sunday</span> <strong class="closed">Closed</strong>
+          </div>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email" required />
+            <textarea placeholder="Message" rows="3"></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-links">
+          <a href="pages.html">Pages</a>
+          <a href="services.html">Services</a>
+          <a href="shop.html">Shop</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <a class="back-to-top" id="backToTop">
+          <i class="fas fa-arrow-up"></i> Back to top
+        </a>
+      </div>
+    </footer>
+    <script src="script/index.js"></script>
+  </body>
+</html>
+<!-- 9022281517 -->

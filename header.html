@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		  header {
+      display: none; /* hide by default (large screens) */
+    }
+
+    @media (max-width: 900px) {
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background: #333;
+        color: #fff;
+        position: relative;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      /* Hamburger */
+      .hamburger {
+        font-size: 26px;
+        cursor: pointer;
+        padding: 5px 10px;
+        background: #444;
+        border-radius: 4px;
+      }
+
+      /* Nav hidden by default */
+      nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #222;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav.active {
+        display: block;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li {
+        border-bottom: 1px solid #444;
+      }
+
+      nav ul li a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      nav ul li a:hover {
+        background: #555;
+      }
+
+      /* Dropdown content hidden */
+      .dropdown-content {
+        display: none;
+        flex-direction: column;
+        background: #444;
+      }
+
+      .dropdown-content a {
+        padding: 10px 30px;
+        font-size: 0.9rem;
+      }
+
+      .dropdown-content.active {
+        display: flex;
+      }
+
+      .drop-menu {
+        width: 14px;
+        margin-left: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">MyLogo</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <nav id="menu">
+      <ul>
+        <!-- Home -->
+        <li>
+          <a onclick="toggleDropdown(this)">Home <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu"></a>
+          <div class="dropdown-content">
+            <a href="#">Home V.1</a>
+            <a href="#">Home V.2</a>
+            <a href="#">Home V.3</a>
+          </div>
+        </li>
+
+        <!-- Services -->
+        <li>
+          <a onclick="toggleDropdown(this)">Services <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu"></a>
+          <div class="dropdown-content">
+            <a href="#">Services</a>
+            <a href="#">Services Detail</a>
+          </div>
+        </li>
+
+        <!-- Pages -->
+        <li>
+          <a onclick="toggleDropdown(this)">Pages <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu"></a>
+          <div class="dropdown-content">
+            <a href="#">About Us</a>
+            <a href="#">Franchises</a>
+            <a href="#">Book an Appointment</a>
+            <a href="#">Feedback</a>
+            <a href="#">Location</a>
+            <a href="#">Gallery</a>
+            <a href="#">Team Variations</a>
+            <a href="#">Team Details</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Project Detail</a>
+          </div>
+        </li>
+
+        <!-- Blog -->
+        <li>
+          <a onclick="toggleDropdown(this)">Blog <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu"></a>
+          <div class="dropdown-content">
+            <a href="#">Full Width Blog</a>
+            <a href="#">Left Side Blog</a>
+            <a href="#">Right Side Blog</a>
+            <a href="#">Blog List</a>
+            <a href="#">Blog 2 Column</a>
+          </div>
+        </li>
+
+        <!-- Shop -->
+        <li>
+          <a onclick="toggleDropdown(this)">Shop <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu"></a>
+          <div class="dropdown-content">
+            <a href="#">Right Side Shop</a>
+            <a href="#">Left Side Shop</a>
+            <a href="#">Full Width Shop</a>
+            <a href="#">Single Page</a>
+            <a href="#">Wishlist</a>
+            <a href="#">Cart</a>
+            <a href="#">Checkout</a>
+          </div>
+        </li>
+
+        <!-- Contact -->
+        <li>
+          <a onclick="toggleDropdown(this)">Contact Us V.3 <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu"></a>
+          <div class="dropdown-content">
+            <a href="#">Contact V.1</a>
+            <a href="#">Contact V.2</a>
+            <a href="#">Contact V.3</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+    <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+
+    function toggleDropdown(element) {
+      const dropdown = element.nextElementSibling;
+      dropdown.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change SVG Example</title>
+  <style>
+    #svgDisplay {
+      width: 120px;
+      height: 120px;
+      transition: all 0.3s ease;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      cursor: pointer;
+      background: #e7e7e7;
+      border: none;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background: #d9d9d9;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="svgDisplay" src="icons/home.svg" alt="SVG Icon">
+
+  <br>
+  <button onclick="changeSVG()">Next SVG</button>
+
+  <script>
+    // Array of SVG info
+    const svgs = [
+      { name: "home", src: "icons/home.svg" },
+      { name: "roof", src: "icons/roof.svg" },
+      { name: "repair", src: "icons/repair.svg" },
+      { name: "replace", src: "icons/replace.svg" }
+    ];
+
+    let currentIndex = 0; // To track which SVG is showing
+
+    function changeSVG() {
+      const img = document.getElementById("svgDisplay");
+
+      // Move to the next SVG (loop back when done)
+      currentIndex = (currentIndex + 1) % svgs.length;
+
+      // Change the image source
+      img.src = svgs[currentIndex].src;
+
+      // Optional: update alt or tooltip
+      img.alt = svgs[currentIndex].name;
+      img.title = svgs[currentIndex].name;
+
+      // Optional effect
+      img.style.transform = "scale(1.2)";
+      setTimeout(() => (img.style.transform = "scale(1)"), 200);
+    }
+  </script>
+</body>
+</html>

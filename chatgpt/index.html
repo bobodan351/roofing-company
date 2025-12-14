@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow Landing with Header</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgba(245, 245, 245, 0.801);
+      line-height: 1.6;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Slideshow as background */
+    .slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      opacity: 0;
+      z-index: 0;
+      animation: fade 15s infinite;
+    }
+
+    .slideshow img:nth-child(1) { animation-delay: 0s; }
+    .slideshow img:nth-child(2) { animation-delay: 5s; }
+    .slideshow img:nth-child(3) { animation-delay: 10s; }
+
+    @keyframes fade {
+      0%   { opacity: 0; }
+      10%  { opacity: 1; }
+      30%  { opacity: 1; }
+      40%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+	  background-color: rgba(245, 245, 245, 0.801);
+      line-height: 1.6;
+      min-height: 200vh; /* Just so we can scroll */
+    }
+	.pre-header{
+		margin-top: 9px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 73.8%;
+		left: 12.7%;
+	}
+	.first-part{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+	}
+	.second-part{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		gap: 15px;
+	}
+	.second-part img,.first-part img{
+		height: 15px;
+		width: 15px;
+		background-color: white;
+		color: white;
+		border-radius: 10px;
+	}
+	.first-part{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		gap: 5px;
+	}
+	.call-text{
+		font-size: 15px;
+		font-weight: bolder;
+		color: rgb(215, 92, 49);
+	}
+    #navbar {
+      position: fixed;
+      top: 40px; /* Start a bit lower */
+      left: 50%;
+	  height: 90px;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1000px;
+      background: white;
+      padding: 20px 40px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      z-index: 1000;
+	  overflow: visible;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    #navbar nav ul {
+      list-style: none;
+      display: flex;
+	  gap: 20px;
+    }
+	#navbar nav ul li{
+		height: 90px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+	}
+    #navbar nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      transition: color 0.2s;
+	  height: 90px;
+	  text-align: center;
+	  display: flex;
+	  align-items: center;
+	  position: relative;
+	  justify-content: center;
+	  transition: all 1s ease-in-out;
+    }
+
+    #navbar nav ul li a:hover {
+      color: black;
+    }
+
+	#navbar nav ul li img{
+		height: 15px;
+		width: 15px;
+	}
+	.dropdown-content{
+		border-top: 3px rgb(215, 92, 49) solid;
+		height: 150px;
+		top: 90px;
+		display: none;
+		position: absolute;
+		width: 200px;
+		background-color: white;
+		transition: all 3s ease;
+		box-shadow: 2px 2px 5px grey;
+	}
+	/*i thik i5 shoutd change the height to auto or smth i didnt change it now due to the content not available*/
+	#navbar nav ul li:hover .dropdown-content{
+		display: flex;
+		flex-direction: column;
+		transition: all 1s ease;
+		
+	}
+	.dropdown-content a {
+		border-bottom: 1px solid grey;
+		font-weight: 1px;
+		font-size: 15px;
+	 	justify-content: left;
+		padding-left: 10px;
+	}
+	.drp-dwn-link:hover{
+		transition: 0.5s all ease-in-out;
+		background-color: rgb(215, 92, 49);
+		color: white;
+	}
+	.Services{
+		height: 100px;
+	}
+	.Pages{
+		height: 500px;
+	}
+	.Blog{
+		height: 250px;
+	}
+	.Shop {
+		height: 350px;
+	}
+    /* Sticky Mode (scrolling) */
+    #navbar.sticky {
+      top: 0;
+      left: 0;
+      transform: none;   /* Remove centering */
+      width: 100%;       /* Expand to full width */
+      max-width: 100%;   /* Ensure no max limit */
+      border-radius: 0;
+      padding: 18px 60px;
+    }
+
+
+    /* Mobile Header */
+    .mobile-header {
+      display: none;
+      position: relative;
+      z-index: 20;
+    }
+
+
+    .mobile-header {
+      display: none; /* hidden on large screens */
+    }
+
+    @media (max-width: 900px) {
+		#navbar{
+			display: none;
+		}
+      .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background: white;
+        color: #fff;
+        position: relative;
+		width: 100%;
+      }
+
+      .mobile-header__logo {
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: all 1s ease-in-out;
+      }
+      .mobile-header__logo:hover{
+        transform: scale(1.1);
+      }
+      .mobile-header__hamburger {
+        font-size: 26px;
+        cursor: pointer;
+        padding: 5px 10px;
+        background: white;
+        border-radius: 4px;
+		color: black;
+    transition: all 1s ease;
+      }
+      .mobile-header__hamburger:hover{
+        transform: scale(1.1);
+        
+      }
+      .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: whitesmoke;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding: 0;
+        margin: 0;
+		color: black;
+      }
+
+      .mobile-nav.active {
+        display: block;
+      }
+
+      .mobile-nav__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .mobile-nav__item {
+        border-bottom: 1px solid #444;
+      }
+
+      .mobile-nav__link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        color: black;
+		background-color: white;
+        text-decoration: none;
+        cursor: pointer;
+		box-shadow: 10px 10px 10px grey;
+		transition: all 0.5s ease-in-out;
+ 	
+      }
+
+      .mobile-nav__link:hover {
+        background: rgb(215, 92, 49) ;
+		color: white;
+      }
+
+      .mobile-dropdown {
+        display: none;
+        flex-direction: column;
+        background: rgb(215, 92, 49) ;
+      }
+
+      .mobile-dropdown__link {
+        padding: 10px 30px;
+        font-size: 0.9rem;
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px solid white;
+        transition: all 0.5s ease-in-out;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+      }
+      .mobile-dropdown__link:hover{
+        background-color: white;
+        color: rgb(215, 92, 49) ;
+        border-bottom: rgb(215, 92, 49);
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.1);
+        padding-right: -20px;
+      }
+      .mobile-dropdown.active {
+        display: flex;
+      }
+
+      .drop-menu-icon {
+        width: 14px;
+        margin-left: 5px;
+      }
+    }
+    @media(max-width:440px){
+      .pre-header{
+        width: 100%;
+        left: 0;
+        padding: 5px;
+      }
+      .second-part{
+        gap: 4px;
+      }
+      .call-text{
+        font-weight: 100;
+        font-size: 13px;
+      }
+      .second-part img,.first-part img{
+        height: 12px;
+        width: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <!-- Slideshow -->
+    <div class="slideshow">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?auto=format&fit=crop&w=1600&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1600&q=80" alt="">
+    </div>
+
+    <!-- Pre-header -->
+    <div class="pre-header">
+      <div class="first-part">
+        <img src="images/call-receive-svgrepo-com.svg" alt="" height="25" width="25">
+        <p class="call-text">Call us +123456789</p>
+      </div>
+      <div class="second-part">
+        <img src="images/facebook-svgrepo-com.svg" alt="">
+        <img src="images/gplus-svgrepo-com.svg" alt="">
+        <img src="images/instagram-svgrepo-com.svg" alt="">
+        <img src="images/twitter-svgrepo-com.svg" alt="">
+        <img src="images/linkedin-boerder-svgrepo-com.svg" alt="">
+      </div>
+    </div>
+
+    <!-- Desktop Navbar -->
+  <header id="navbar">
+    <div class="logo"><img src="images/chappru logo.png" alt=""></div>
+    <nav id="nav-menu">
+      <ul>
+        <li>
+           <a href="#">Home
+             <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu">
+            </a>
+            <div class="dropdown-content">
+              <a href="#" class="drp-dwn-link">Home V.1</a>
+              <a href="#" class="drp-dwn-link">Home V.2</a>
+              <a href="#" class="drp-dwn-link">Home V.3</a>
+            </div>
+          </li>
+        <li>
+          <a href="#">Services<img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu">
+          </a>
+          <div class="dropdown-content Services">
+            <a href="#" class="drp-dwn-link">Services</a>
+            <a href="#" class="drp-dwn-link">Services Details</a>
+        </div></li>
+        <li>
+          <a href="#">Pages<img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu"></a>
+          <div class="dropdown-content Pages">
+            <a href="#" class="drp-dwn-link">About Us</a>
+            <a href="#" class="drp-dwn-link">Franchise</a>
+            <a href="#" class="drp-dwn-link">Book An Appointment</a>
+            <a href="#" class="drp-dwn-link">Feedback</a>
+            <a href="#" class="drp-dwn-link">Location </a>
+            <a href="#" class="drp-dwn-link">Gallery</a>
+            <a href="#" class="drp-dwn-link">Team Variation</a>
+            <a href="#" class="drp-dwn-link">Team Details</a>
+            <a href="#" class="drp-dwn-link">Testimonials</a>
+            <a href="#" class="drp-dwn-link">Project Detail</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">Blog
+            <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu">
+          </a>
+          <div class="dropdown-content Blog">
+            <a href="#" class="drp-dwn-link">Full Width Blog</a>
+            <a href="#" class="drp-dwn-link">Left Width Blog</a>
+            <a href="#" class="drp-dwn-link">Rigth Width Blog</a>
+            <a href="#" class="drp-dwn-link">Blog List</a>
+            <a href="#" class="drp-dwn-link">Blog 2 Column</a>
+          </div></li>
+        <li><a href="#">Shop<img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu"></a><div class="dropdown-content Shop">
+          <a href="" class="drp-dwn-link">Right Side Shop</a>
+          <a href="" class="drp-dwn-link">Left Side Shop</a>
+          <a href="" class="drp-dwn-link">Full Width Shop</a>
+          <a href="" class="drp-dwn-link">Single Page</a>
+          <a href="" class="drp-dwn-link">Whilist</a>
+          <a href="" class="drp-dwn-link">Cart</a>
+          <a href="" class="drp-dwn-link">Checkout</a>
+        </div></li>
+        <li><a href="#">Contact Us V.3<img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu"></a><div class="dropdown-content">
+          <a href="" class="drp-dwn-link">Contact V.1</a>
+          <a href="" class="drp-dwn-link">Contact V.2</a>
+          <a href="" class="drp-dwn-link">Contact V.3</a>
+        </div></li>
+      </ul>
+    </nav>
+  </header>
+
+    <!-- Mobile Navbar -->
+    <header class="mobile-header">
+    <div class="mobile-header__logo"><img src="chappru logo.png" alt=""></div>
+    <div class="mobile-header__hamburger" onclick="toggleMenu()">☰</div>
+
+    <nav id="menu" class="mobile-nav">
+      <ul class="mobile-nav__list">
+        <!-- Home -->
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+            Home <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu-icon">
+          </a>
+          <div class="mobile-dropdown">
+            <a href="#" class="mobile-dropdown__link">Home V.1</a>
+            <a href="#" class="mobile-dropdown__link">Home V.2</a>
+            <a href="#" class="mobile-dropdown__link">Home V.3</a>
+          </div>
+        </li>
+
+        <!-- Services -->
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+            Services <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu-icon">
+          </a>
+          <div class="mobile-dropdown">
+            <a href="#" class="mobile-dropdown__link">Services</a>
+            <a href="#" class="mobile-dropdown__link">Services Detail</a>
+          </div>
+        </li>
+
+        <!-- Pages -->
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+            Pages <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu-icon">
+          </a>
+          <div class="mobile-dropdown">
+            <a href="#" class="mobile-dropdown__link">About Us</a>
+            <a href="#" class="mobile-dropdown__link">Franchises</a>
+            <a href="#" class="mobile-dropdown__link">Book an Appointment</a>
+            <a href="#" class="mobile-dropdown__link">Feedback</a>
+            <a href="#" class="mobile-dropdown__link">Location</a>
+            <a href="#" class="mobile-dropdown__link">Gallery</a>
+            <a href="#" class="mobile-dropdown__link">Team Variations</a>
+            <a href="#" class="mobile-dropdown__link">Team Details</a>
+            <a href="#" class="mobile-dropdown__link">Testimonials</a>
+            <a href="#" class="mobile-dropdown__link">Project Detail</a>
+          </div>
+        </li>
+
+        <!-- Blog -->
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+            Blog <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu-icon">
+          </a>
+          <div class="mobile-dropdown">
+            <a href="#" class="mobile-dropdown__link">Full Width Blog</a>
+            <a href="#" class="mobile-dropdown__link">Left Side Blog</a>
+            <a href="#" class="mobile-dropdown__link">Right Side Blog</a>
+            <a href="#" class="mobile-dropdown__link">Blog List</a>
+            <a href="#" class="mobile-dropdown__link">Blog 2 Column</a>
+          </div>
+        </li>
+
+        <!-- Shop -->
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+            Shop <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu-icon">
+          </a>
+          <div class="mobile-dropdown">
+            <a href="#" class="mobile-dropdown__link">Right Side Shop</a>
+            <a href="#" class="mobile-dropdown__link">Left Side Shop</a>
+            <a href="#" class="mobile-dropdown__link">Full Width Shop</a>
+            <a href="#" class="mobile-dropdown__link">Single Page</a>
+            <a href="#" class="mobile-dropdown__link">Wishlist</a>
+            <a href="#" class="mobile-dropdown__link">Cart</a>
+            <a href="#" class="mobile-dropdown__link">Checkout</a>
+          </div>
+        </li>
+
+        <!-- Contact -->
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+            Contact Us V.3 <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu-icon">
+          </a>
+          <div class="mobile-dropdown">
+            <a href="#" class="mobile-dropdown__link">Contact V.1</a>
+            <a href="#" class="mobile-dropdown__link">Contact V.2</a>
+            <a href="#" class="mobile-dropdown__link">Contact V.3</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  </section>
+
+  <script>
+    // Sticky navbar
+    const header = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+
+    function toggleDropdown(element) {
+      const dropdown = element.nextElementSibling;
+      dropdown.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <style>
+      .form-group input,
+      .form-group textarea {
+        border-radius: 0px;
+        background-color: white;
+      }
+      input.input-text::placeholder,
+      textarea.input-text::placeholder {
+        color: #909090;
+      }
+      .submit-btn {
+        background-color: #ffb900;
+        border-radius: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="mobile-header">
+      <div class="mobile-header__logo">
+        <img src="images/chappru logo.png" alt="" />
+      </div>
+      <div class="mobile-header__hamburger" onclick="toggleMenu()">☰</div>
+
+      <nav id="menu" class="mobile-nav">
+        <ul class="mobile-nav__list">
+          <!-- Home -->
+          <li class="mobile-nav__item">
+            <a
+              class="mobile-nav__link"
+              onclick="toggleDropdown(this)"
+              href="index.html"
+            >
+              Home
+            </a>
+          </li>
+
+          <!-- Services -->
+          <li class="mobile-nav__item">
+            <a
+              class="mobile-nav__link"
+              onclick="toggleDropdown(this)"
+              href="services.html"
+            >
+              Services
+            </a>
+          </li>
+
+          <!-- Pages -->
+          <li class="mobile-nav__item">
+            <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+              Pages
+              <img
+                src="images/dropdown-arrow-svgrepo-com.svg"
+                alt=""
+                class="drop-menu-icon"
+              />
+            </a>
+            <div class="mobile-dropdown">
+              <a href="about.html" class="mobile-dropdown__link">About Us</a>
+
+              <a href="book-an-appointment.html" class="mobile-dropdown__link">Book an Appointment</a>
+
+              <a href="#" class="mobile-dropdown__link">Location</a>
+              <a href="#" class="mobile-dropdown__link">Gallery</a>
+              <a href="#" class="mobile-dropdown__link">Team Variations</a>
+              <a href="#" class="mobile-dropdown__link">Team Details</a>
+              <a href="#" class="mobile-dropdown__link">Testimonials</a>
+            </div>
+          </li>
+
+          <!-- Blog -->
+          <li class="mobile-nav__item">
+            <a class="mobile-nav__link" onclick="toggleDropdown(this)">
+              Blog
+            </a>
+          </li>
+
+          <!-- Shop -->
+
+          <!-- Contact -->
+          <li class="mobile-nav__item">
+            <a
+              class="mobile-nav__link"
+              onclick="toggleDropdown(this)"
+              href="contact.html"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <!-- Slideshow -->
+
+      <div class="services-bgc">
+        <div class="services-bgc-frame"></div>
+        <p class="header-text">Contact Us</p>
+        <a href="index.html" class="sub-header-text"
+          >ROOFING REPAIR <i class="fas fa-chevron-right"></i>
+          <span class="WELCOME">CONTACT US</span></a
+        >
+      </div>
+      <header id="navbar">
+        <div class="logo"><img src="images/chappru logo.png" alt="" /></div>
+        <nav id="nav-menu">
+          <ul>
+            <li>
+              <a href="index.html" class="menu">Home </a>
+            </li>
+            <li>
+              <a href="services.html" class="menu">Services</a>
+            </li>
+            <li>
+              <a href="#" class="menu"
+                >Pages<img
+                  src="images/dropdown-arrow-svgrepo-com.svg"
+                  alt=""
+                  class="drop-menu"
+              /></a>
+              <div class="dropdown-content Pages">
+                <a href="about.html" class="drp-dwn-link">About Us</a>
+                <a href="book-an-appointment.html" class="drp-dwn-link">Book An Appointment</a>
+                <a href="" class="drp-dwn-link">Location </a>
+                <a href="#" class="drp-dwn-link">Gallery</a>
+                <a href="#" class="drp-dwn-link">Team Variation</a>
+                <a href="#" class="drp-dwn-link">Team Details</a>
+                <a href="#" class="drp-dwn-link">Testimonials</a>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="menu">Blog </a>
+            </li>
+
+            <li>
+              <a href="contact.html" class="menu">Contact Us </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </section>
+    <section>
+      <div class="welcome">
+        <span class="WELCOME" style="color: #ffb900">Contact Us</span> With Our
+        Location
+      </div>
+      <span class="empty-two"></span>
+      <div
+        class="contact-first-section"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          margin-top: 60px;
+        "
+      >
+        <div
+          style="
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 300px;
+          "
+          class="contact-first-section-div"
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid #cfcfcf;
+              height: 90px;
+              width: 90px;
+              font-size: 1.5rem;
+              padding: 30px;
+              border-radius: 50%;
+            "
+          >
+            <i class="fas fa-location-dot" style="color: #ffb900"></i>
+          </div>
+          <div
+            style="
+              display: flex;
+              width: auto;
+              flex-direction: column;
+              gap: 15px;
+            "
+          >
+            <p style="font-size: 1.1rem; font-weight: 500">Postal Address</p>
+            <p style="font-size: 0.8rem; color: #909090; line-height: 25px">
+              PO Box 16122 collins street <br />West Victoria 8007 Australia
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 300px;
+          "
+          class="contact-first-section-div"
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid #cfcfcf;
+              height: 90px;
+              width: 90px;
+              font-size: 1.5rem;
+              padding: 30px;
+              border-radius: 50%;
+            "
+          >
+            <i class="fas fa-phone-alt" style="color: #ffb900"></i>
+          </div>
+          <div
+            style="
+              display: flex;
+              width: auto;
+              flex-direction: column;
+              gap: 15px;
+            "
+          >
+            <p style="font-size: 1.1rem; font-weight: 500">Phone & E-mail</p>
+            <p style="font-size: 0.8rem; color: #909090; line-height: 25px">
+              +61 3 4729 5184 <br />info@envato.com
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 300px;
+          "
+          class="contact-first-section-div"
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid #cfcfcf;
+              height: 90px;
+              width: 90px;
+              font-size: 1.5rem;
+              padding: 30px;
+              border-radius: 50%;
+            "
+          >
+            <i class="far fa-calendar-days" style="color: #ffb900"></i>
+          </div>
+          <div
+            style="
+              display: flex;
+              width: auto;
+              flex-direction: column;
+              gap: 15px;
+            "
+          >
+            <p style="font-size: 1.1rem; font-weight: 500">Business Hours</p>
+            <p style="font-size: 0.8rem; color: #909090; line-height: 25px">
+              Monday - Friday <br />8:00am - 5:00pm
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section style="margin-top: 60px; padding: 10px">
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <input
+            type="text"
+            name="firstName"
+            placeholder="First Name"
+            required
+            class="input-text"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            class="input-text"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            name="address"
+            placeholder="Address"
+            required
+            class="input-text"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone"
+            required
+            class="input-text"
+          />
+        </div>
+
+        <div class="form-group full">
+          <textarea
+            name="message"
+            placeholder="Message"
+            required
+            class="input-text"
+          ></textarea>
+        </div>
+
+        <div class="form-message" id="form-message"></div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane"></i> Submit
+        </button>
+      </form>
+    </section>
+    <section
+      style="
+     
+        background-color: #e9e6ed;
+        display: flex;
+        margin-top: 80px;
+      "
+      class="phone-number"
+    >
+      <div style="display: flex;justify-content: center;align-items: center;"><img src="/images/work (1).png" alt="" height="620px" class="roofer-img" /></div>
+      <div
+        style="justify-content: center; display: flex; flex-direction: column;align-items: center;"
+      >
+        <p
+          style="
+            font-size: 1.6rem;
+            font-weight: 600;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            text-align: center;
+          "
+        >
+          Do you want to roof installation ?
+        </p>
+        <p
+          style="
+           text-align: center;
+            color: rgb(71, 71, 250);
+            
+          "
+          class="com-num"
+        >
+          +61 8 3485 9374
+        </p>
+        <div class="tel-img"><img src="/images/phone.png" alt="" /></div>
+      </div>
+    </section>
+    <section
+      style="display: flex; flex-wrap: wrap; margin: 50px"
+      class="column"
+    >
+      <div
+        class="col-two-third-section"
+        style="background-color: white; flex: 1; padding: 0"
+      >
+        <div style="display: flex; flex-direction: column">
+          <div
+            class="col-two-third-section-header-text"
+            style="color: rgb(215, 92, 49); margin: 0"
+          >
+            FAQ
+            <span style="color: black">'S</span>
+          </div>
+          <span class="empty-span"></span>
+        </div>
+        <div style="margin-top: 30px; display: flex; flex-direction: column">
+          <div class="dropdown-container">
+            <div
+              onclick="toggleDropdown(this)"
+              style="
+                font-size: 1rem;
+                background-color: rgb(255, 180, 41);
+                height: 50px;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 20px;
+                padding-right: 10px;
+                margin-right: 65px;
+                cursor: pointer;
+                margin-bottom: 20px;
+              "
+            >
+              <p
+                style="
+                  align-self: center;
+                  display: flex;
+                  justify-self: center;
+                  margin: 0;
+                "
+              >
+                Improving the taste
+              </p>
+              <i
+                class="fas fa-chevron-down"
+                style="font-size: 0.8rem"
+                id="chev"
+              ></i>
+            </div>
+            <div class="dropdown">
+              <span
+                style="
+                  display: flex;
+                  height: 100px;
+                  width: 10px;
+                  background-color: #696969;
+                "
+              ></span>
+              <p
+                style="
+                  color: white;
+                  font-size: 0.9em;
+                  line-height: 30px;
+                  background-color: rgb(215, 92, 49);
+                  padding-left: 10px;
+                  height: 90px;
+                "
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. luam eu
+                porta lacus, a vestibulum tortor. Etiam finibus id nisi vitaoe
+                luctus. Sed efficitur, ipsum at semper ultrices, turpis mi conue
+                libero, in suscipit arcu augue at arcu
+              </p>
+            </div>
+          </div>
+          <div class="dropdown-container">
+            <div
+              onclick="toggleDropdown(this)"
+              style="
+                font-size: 1rem;
+                background-color: rgb(215, 92, 49);
+                height: 50px;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 20px;
+                padding-right: 10px;
+                margin-right: 65px;
+                cursor: pointer;
+                margin-bottom: 20px;
+              "
+            >
+              <p
+                style="
+                  align-self: center;
+                  display: flex;
+                  justify-self: center;
+                  margin: 0;
+                "
+              >
+                Improving the taste
+              </p>
+              <i
+                class="fas fa-chevron-down"
+                style="font-size: 0.8rem"
+                id="chev-two"
+              ></i>
+            </div>
+            <div class="dropdown">
+              <span
+                style="
+                  display: flex;
+                  height: 100px;
+                  width: 10px;
+                  background-color: #696969;
+                "
+              ></span>
+              <p
+                style="
+                  color: white;
+                  font-size: 0.9em;
+                  line-height: 30px;
+                  background-color: rgb(255, 180, 41);
+                  padding-left: 10px;
+                  height: 90px;
+                "
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. luam eu
+                porta lacus, a vestibulum tortor. Etiam finibus id nisi vitaoe
+                luctus. Sed efficitur, ipsum at semper ultrices, turpis mi conue
+                libero, in suscipit arcu augue at arcu
+              </p>
+            </div>
+          </div>
+          <div class="dropdown-container">
+            <div
+              onclick="toggleDropdown(this)"
+              style="
+                font-size: 1rem;
+                background-color: rgb(255, 180, 41);
+                height: 50px;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 20px;
+                padding-right: 10px;
+                margin-right: 65px;
+                cursor: pointer;
+                margin-bottom: 20px;
+              "
+            >
+              <p
+                style="
+                  align-self: center;
+                  display: flex;
+                  justify-self: center;
+                  margin: 0;
+                "
+              >
+                Improving the taste
+              </p>
+              <i
+                class="fas fa-chevron-down"
+                style="font-size: 0.8rem"
+                id="chev-three"
+              ></i>
+            </div>
+            <div class="dropdown">
+              <span
+                style="
+                  display: flex;
+                  height: 100px;
+                  width: 10px;
+                  background-color: #696969;
+                "
+              ></span>
+              <p
+                style="
+                  color: white;
+                  font-size: 0.9em;
+                  line-height: 30px;
+                  background-color: rgb(215, 92, 49);
+                  padding-left: 10px;
+                  height: 90px;
+                "
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. luam eu
+                porta lacus, a vestibulum tortor. Etiam finibus id nisi vitaoe
+                luctus. Sed efficitur, ipsum at semper ultrices, turpis mi conue
+                libero, in suscipit arcu augue at arcu
+              </p>
+            </div>
+          </div>
+          <div class="dropdown-container">
+            <div
+              onclick="toggleDropdown(this)"
+              style="
+                font-size: 1rem;
+                background-color: rgb(215, 92, 49);
+                height: 50px;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 20px;
+                padding-right: 10px;
+                margin-right: 65px;
+                cursor: pointer;
+                margin-bottom: 20px;
+              "
+            >
+              <p
+                style="
+                  align-self: center;
+                  display: flex;
+                  justify-self: center;
+                  margin: 0;
+                "
+              >
+                Improving the taste
+              </p>
+              <i
+                class="fas fa-chevron-down"
+                style="font-size: 0.8rem"
+                id="chev-four"
+              ></i>
+            </div>
+            <div class="dropdown">
+              <span
+                style="
+                  display: flex;
+                  height: 100px;
+                  width: 10px;
+                  background-color: #696969;
+                "
+              ></span>
+              <p
+                style="
+                  color: white;
+                  font-size: 0.9em;
+                  line-height: 30px;
+                  background-color: rgb(255, 180, 41);
+                  padding-left: 10px;
+                  height: 90px;
+                "
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. luam eu
+                porta lacus, a vestibulum tortor. Etiam finibus id nisi vitaoe
+                luctus. Sed efficitur, ipsum at semper ultrices, turpis mi conue
+                libero, in suscipit arcu augue at arcu
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1">
+        <div style="display: flex; flex-direction: column">
+          <div
+            class="col-two-third-section-header-text"
+            style="color: rgb(215, 92, 49); margin: 0"
+          >
+            CLIENTS
+            <span style="color: black">SAYS</span>
+          </div>
+          <span class="empty-span"></span>
+          <div
+            style="
+              display: flex;
+              margin-top: 30px;
+              flex-direction: column;
+              height: 280px;
+              border: 2px solid #cfcfcf;
+              gap: 1px;
+              background-color: #cfcfcf;
+            "
+          >
+            <div
+              class="cenat"
+              style="
+                flex: 1;
+                height: 100%;
+                background-color: #fff;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                class="margin"
+                style="height: 100px; width: 2px; background-color: #696969"
+              ></span>
+              <p class="quote-about"></p>
+            </div>
+            <div class="name-image">
+              <img src="" alt="" class="client-photo-about" />
+              <div class="client-info-about">
+                <p class="client-name-about">Hitesh Mahavar</p>
+                <p class="client-job-about">Wp Organic</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <!-- Column 1: Logo + Description + Social -->
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="images/logo-white.png" alt="Chhapru" />
+          </div>
+          <p class="footer-text">
+            Donec pulvinar suscipit sapien nec blandit. Curabitur nunc eros,
+            semper nisl aliquam rutrum neque. Mauris eleifend Donec pulvinar
+            suscipit sapien nec blandit. Curabitur nunc eros, semper nisl
+            aliquam rutrum neque.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Contact Info -->
+        <div class="footer-col">
+          <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              121 King Street, Melbourne Victoria<br />
+              3000 Australia
+            </div>
+          </div>
+
+          <h3 style="margin-top: 30px"><i class="fas fa-phone"></i> Call Us</h3>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              Phone: +61 3 8376 6284<br />
+              Fax: +61 3 8376 6284
+            </div>
+          </div>
+
+          <h3 style="margin-top: 30px">
+            <i class="fas fa-envelope"></i> Mail Us
+          </h3>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              info: HR.love@chhapru.com<br />
+              job@chhapru.com
+            </div>
+          </div>
+
+          <h3 style="margin-top: 30px">
+            <i class="fas fa-building"></i> Office
+          </h3>
+          <div class="contact-item">
+            <i class="fas fa-building"></i>
+            <div>Head Corporate Australia India</div>
+          </div>
+        </div>
+
+        <!-- Column 3: Working Hours -->
+        <div class="footer-col">
+          <h3>Working Hours</h3>
+          <div class="working-hours">
+            <span>Monday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Tuesday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Wednesday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Thursday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Friday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Saturday</span> <strong>9:00 AM – 7:00 PM</strong>
+            <span>Sunday</span> <strong class="closed">Closed</strong>
+          </div>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email" required />
+            <textarea placeholder="Message" rows="3"></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-links">
+          <a href="pages.html">Pages</a>
+          <a href="services.html">Services</a>
+          <a href="shop.html">Shop</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <a class="back-to-top" id="backToTop">
+          <i class="fas fa-arrow-up"></i> Back to top
+        </a>
+      </div>
+    </footer>
+    <script>
+      const testimonial = [
+        {
+          quote:
+            "Best roofing company in town. Transparent pricing, fast response, and excellent craftsmanship. Will definitely use again.",
+          name: "Hitesh Mahavar",
+          job: "Wp Organic",
+          photo: "images/client-1.jpg",
+        },
+        {
+          quote:
+            "Amazing service and professional team! They fixed our roof in no time and the result is perfect. Highly recommend Chhapru to anyone needing roof repairs.",
+          name: "Sarah Johnson",
+          job: "Homeowner",
+          photo: "images/client-2.jpg",
+        },
+        {
+          quote:
+            "Best roofing company in town. Transparent pricing, fast response, and excellent craftsmanship. Will definitely use again!",
+          name: "Michael Chen",
+          job: "Property Manager",
+          photo: "images/client-1.jpg",
+        },
+      ];
+      let ampere = 0;
+      let changeAboutTestimonial = (direction) => {
+        ampere = (ampere + direction + testimonial.length) % testimonial.length;
+        updateTestimonialAbout();
+      };
+      function updateTestimonialAbout() {
+        const t = testimonial[ampere];
+        document.querySelector(".quote-about").textContent = t.quote;
+        document.querySelector(".client-name-about").textContent = t.name;
+        document.querySelector(".client-job-about").textContent = t.job;
+        document.querySelector(".client-photo-about").src = t.photo;
+      }
+      if (document.querySelector(".quote-about")) {
+        setInterval(() => changeAboutTestimonial(1), 3000);
+      }
+    </script>
+    <script src="script/index.js"></script>
+    <script src="script/contact.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </body>
+</html>

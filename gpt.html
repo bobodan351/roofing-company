@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Expanding Navbar</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css"> <!-- new file for responsive CSS -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <style>
+/* responsive.css */
+
+/* Hide hamburger by default */
+.hamburger {
+  display: none;
+}
+
+/* Only applies for screens below 900px */
+@media (max-width: 900px) {
+  /* Hide desktop nav */
+  header nav {
+    display: none;
+  }
+
+  /* Show hamburger at right side */
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: black;
+    z-index: 1100;
+  }
+
+  /* Mobile nav menu: full screen overlay */
+  #nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full screen */
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items vertically */
+    align-items: center;
+    gap: 20px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 1000;
+  }
+
+  /* Show menu when active */
+  #nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mobile menu links */
+  #nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  #nav-menu ul li {
+    width: 100%;
+  }
+
+  #nav-menu ul li a {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Disable dropdown hover on mobile */
+  .dropdown-content {
+    z-index: 10;
+  }
+}
+@media (max-width: 900px) {
+  header {
+    top: 0;              /* move header to top */
+    border-radius: 0;    /* flat top edge for cleaner look */
+    width: 100%;         /* span full width */
+    left: 0;             /* reset centering */
+    transform: none;     /* cancel translateX */
+  }
+}
+
+/* Hamburger toggled → X icon */
+.hamburger.active i::before {
+  content: "\f00d"; /* Font Awesome "times" icon */
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+	  background-color: rgba(245, 245, 245, 0.801);
+      line-height: 1.6;
+      min-height: 200vh; /* Just so we can scroll */
+    }
+	.pre-header{
+		margin-top: 9px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 73.8%;
+		left: 12.7%;
+	}
+	.first-part{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+	}
+	.second-part{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		gap: 15px;
+	}
+	.second-part img,.first-part img{
+		height: 15px;
+		width: 15px;
+		background-color: white;
+		color: white;
+		border-radius: 10px;
+	}
+	.first-part{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		gap: 5px;
+	}
+	.call-text{
+		font-size: 15px;
+		font-weight: bolder;
+		color: rgb(215, 92, 49);
+	}
+    header {
+      position: fixed;
+      top: 40px; /* Start a bit lower */
+      left: 50%;
+	  height: 90px;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1000px;
+      background: white;
+      padding: 20px 40px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      z-index: 1000;
+	  overflow: visible;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+	  gap: 10px;
+    }
+	header nav ul li{
+		height: 90px;
+		margin-left: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+    header nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      transition: color 0.2s;
+	  height: 90px;
+	  text-align: center;
+	  display: flex;
+	  align-items: center;
+	  position: relative;
+	  justify-content: center;
+    }
+
+    header nav ul li a:hover {
+      color: rgb(215, 92, 49);
+    }
+
+	header nav ul li img{
+		height: 15px;
+		width: 15px;
+	}
+	.dropdown-content{
+		border-top: 3px rgb(215, 92, 49) solid;
+		height: 150px;
+		top: 90px;
+		display: none;
+		position: absolute;
+		width: 200px;
+		background-color: white;
+		transition: all 1s ease;
+		box-shadow: 2px 2px 5px grey;
+	}
+	/*i thik i5 shoutd change the height to auto or smth i didnt change it now due to the content not available*/
+	header nav ul li:hover .dropdown-content{
+		display: flex;
+		flex-direction: column;
+		transition: all 1s ease;
+		
+	}
+	.dropdown-content a {
+		border-bottom: 1px solid grey;
+		font-weight: 1px;
+		font-size: 15px;
+	 	justify-content: left;
+		padding-left: 10px;
+	}
+	.drp-dwn-link:hover{
+		transition: 0.5s all ease-in-out;
+		background-color: rgb(215, 92, 49);
+		color: white;
+	}
+	.Services{
+		height: 100px;
+	}
+	.Pages{
+		height: 500px;
+	}
+	.Blog{
+		height: 250px;
+	}
+	.Shop {
+		height: 350px;
+	}
+    /* Sticky Mode (scrolling) */
+    header.sticky {
+      top: 0;
+      left: 0;
+      transform: none;   /* Remove centering */
+      width: 100%;       /* Expand to full width */
+      max-width: 100%;   /* Ensure no max limit */
+      border-radius: 0;
+      padding: 18px 60px;
+    }
+
+    section {
+      padding: 140px 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="pre-header">
+    <div class="first-part">
+      <img src="images/call-receive-svgrepo-com.svg" alt="" height="25px" width="25px">
+      <p class="call-text">Call us +123456789</p>
+    </div>
+    <div class="second-part">
+      <img src="images/facebook-svgrepo-com.svg" alt="">
+      <img src="images/gplus-svgrepo-com.svg" alt="">
+      <img src="images/instagram-svgrepo-com.svg" alt="">
+      <img src="images/twitter-svgrepo-com.svg" alt="">
+      <img src="images/linkedin-boerder-svgrepo-com.svg" alt="">
+    </div>
+  </div>
+
+  <header id="navbar">
+    <div class="logo"><img src="images/chappru logo.png" alt=""></div>
+
+    <!-- Hamburger button (only for small screens) -->
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="nav-menu">
+      <ul>
+        <li>
+          <a href="#">Home
+            <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu">
+          </a>
+          <div class="dropdown-content">
+            <a href="#" class="drp-dwn-link">Home V.1</a>
+            <a href="#" class="drp-dwn-link">Home V.2</a>
+            <a href="#" class="drp-dwn-link">Home V.3</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">Services
+            <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu">
+          </a>
+          <div class="dropdown-content Services">
+            <a href="#" class="drp-dwn-link">Services</a>
+            <a href="#" class="drp-dwn-link">Services Details</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">Pages
+            <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu">
+          </a>
+          <div class="dropdown-content Pages">
+            <a href="#" class="drp-dwn-link">About Us</a>
+            <a href="#" class="drp-dwn-link">Franchise</a>
+            <a href="#" class="drp-dwn-link">Book An Appointment</a>
+            <a href="#" class="drp-dwn-link">Feedback</a>
+            <a href="#" class="drp-dwn-link">Location </a>
+            <a href="#" class="drp-dwn-link">Gallery</a>
+            <a href="#" class="drp-dwn-link">Team Variation</a>
+            <a href="#" class="drp-dwn-link">Team Details</a>
+            <a href="#" class="drp-dwn-link">Testimonials</a>
+            <a href="#" class="drp-dwn-link">Project Detail</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">Blog
+            <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu">
+          </a>
+          <div class="dropdown-content Blog">
+            <a href="#" class="drp-dwn-link">Full Width Blog</a>
+            <a href="#" class="drp-dwn-link">Left Width Blog</a>
+            <a href="#" class="drp-dwn-link">Rigth Width Blog</a>
+            <a href="#" class="drp-dwn-link">Blog List</a>
+            <a href="#" class="drp-dwn-link">Blog 2 Column</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">Shop
+            <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu">
+          </a>
+          <div class="dropdown-content Shop">
+            <a href="" class="drp-dwn-link">Right Side Shop</a>
+            <a href="" class="drp-dwn-link">Left Side Shop</a>
+            <a href="" class="drp-dwn-link">Full Width Shop</a>
+            <a href="" class="drp-dwn-link">Single Page</a>
+            <a href="" class="drp-dwn-link">Whilist</a>
+            <a href="" class="drp-dwn-link">Cart</a>
+            <a href="" class="drp-dwn-link">Checkout</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">Contact Us V.3
+            <img src="images/dropdown-arrow-svgrepo-com.svg" alt="" class="drop-menu">
+          </a>
+          <div class="dropdown-content">
+            <a href="" class="drp-dwn-link">Contact V.1</a>
+            <a href="" class="drp-dwn-link">Contact V.2</a>
+            <a href="" class="drp-dwn-link">Contact V.3</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <!-- page content -->
+  </section>
+
+  <script>
+	// script.js
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+
+  </script>
+</body>
+</html>
